@@ -1,0 +1,24 @@
+version: '3.4'
+
+volumes:
+  mongodb_data:
+
+services:
+  labdocker:
+    image: ${DOCKER_REGISTRY-}labdocker
+    build:
+      context: .
+      dockerfile: LabDocker/Dockerfile
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:4.4
+    restart: always
+    environment: 
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    ports: 
+      - 27018:27017
+    volumes:
+      - mongodb_data:/data/db
