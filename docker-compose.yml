@@ -11,8 +11,7 @@ services:
       dockerfile: LabDocker/Dockerfile   
 
   mongo:
-    image: mongo:4.4
-    restart: always
+    image: mongo:4.4    
     environment: 
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: rootpassword
