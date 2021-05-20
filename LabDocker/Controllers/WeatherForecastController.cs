@@ -27,8 +27,7 @@ namespace LabDocker.Controllers
             var update = Builders<WeatherForecast>.Update
                 .SetOnInsert(wf => wf.Date, weatherForecast.Date)
                 .Set(wf => wf.Summary, weatherForecast.Summary)
-                .Set(wf => wf.TemperatureC, weatherForecast.TemperatureC)
-                .Set(wf => wf.TemperatureF, weatherForecast.TemperatureF);
+                .Set(wf => wf.TemperatureC, weatherForecast.TemperatureC);
             await _collection.UpdateOneAsync(filter, update, new UpdateOptions()
             {
                 IsUpsert = true,

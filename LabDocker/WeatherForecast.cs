@@ -1,9 +1,12 @@
 using System;
+using MongoDB.Bson;
 
 namespace LabDocker
 {
     public class WeatherForecast
     {
+        public ObjectId Id { get; set; }
+
         public DateTime Date { get; set; }
 
         public int TemperatureC { get; set; }
