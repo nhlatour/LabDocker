@@ -1,10 +1,12 @@
 using System;
+using System.Text.Json.Serialization;
 using MongoDB.Bson;
 
 namespace LabDocker
 {
     public class WeatherForecast
     {
+        [JsonIgnore]
         public ObjectId Id { get; set; }
 
         public DateTime Date { get; set; }
